@@ -1,0 +1,13 @@
+<!-- public/img/about-1.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fed7aa"/>
+      <stop offset="100%" stop-color="#78350f"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#g)"/>
+  <circle cx="600" cy="400" r="200" fill="#fff" opacity="0.15"/>
+  <path d="M200 900 Q600 600 1000 900 Z" fill="#451a03" opacity="0.4"/>
+  <text x="600" y="450" font-family="Georgia,serif" font-size="72" font-weight="700" text-anchor="middle" fill="#fef3c7">Nuestro Taller</text>
+</svg>

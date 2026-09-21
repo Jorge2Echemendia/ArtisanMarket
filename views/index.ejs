@@ -1,0 +1,59 @@
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-text">
+      <span class="eyebrow">Hecho a mano · Edición limitada</span>
+      <h1>Objetos con <em>alma</em>,<br/>historias con <em>raíces</em>.</h1>
+      <p>Descubre piezas únicas creadas por artesanos locales. Cada compra apoya un taller, una familia, una tradición.</p>
+      <div class="hero-actions">
+        <a href="/shop" class="btn btn-primary">Explorar tienda</a>
+        <a href="/about" class="btn btn-ghost">Conocer artesanos →</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>120+</strong><span>Artesanos</span></div>
+        <div><strong>4.9★</strong><span>Valoración</span></div>
+        <div><strong>100%</strong><span>Hecho a mano</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+  <div class="blob"></div>
+  <img src="/img/hero.svg" alt="Artesanía hecha a mano" />
+</div>
+</section>
+
+<section class="featured container">
+  <header class="section-head">
+    <h2>Piezas <em>destacadas</em></h2>
+    <a href="/shop" class="link-arrow">Ver todas →</a>
+  </header>
+  <div class="product-grid">
+    <% destacados.forEach(p => { %>
+      <%- include('partials/product-card', { producto: p }) %>
+    <% }) %>
+  </div>
+</section>
+
+<section class="values container">
+  <div class="value">
+    <span class="icon">🌿</span>
+    <h3>Materiales naturales</h3>
+    <p>Maderas certificadas, lanas orgánicas y tintes vegetales.</p>
+  </div>
+  <div class="value">
+    <span class="icon">🤲</span>
+    <h3>Hecho a mano</h3>
+    <p>Cada pieza es única, creada por manos reales.</p>
+  </div>
+  <div class="value">
+    <span class="icon">📦</span>
+    <h3>Envío cuidado</h3>
+    <p>Empaque reciclado y protección en cada envío.</p>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container">
+    <h2>¿Eres artesano?</h2>
+    <p>Súmate a nuestra comunidad y llega a más hogares.</p>
+    <a href="/contact" class="btn btn-primary">Quiero vender</a>
+  </div>
+</section>

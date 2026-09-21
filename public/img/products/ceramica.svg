@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fef3c7"/>
+      <stop offset="100%" stop-color="#fdba74"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#g)"/>
+  <circle cx="400" cy="240" r="140" fill="#b45309" opacity="0.12"/>
+  <ellipse cx="400" cy="260" rx="90" ry="110" fill="#b45309" opacity="0.35"/>
+  <ellipse cx="400" cy="180" rx="60" ry="30" fill="#78350f" opacity="0.5"/>
+  <text x="400" y="480" font-family="Georgia,serif" font-size="46" font-weight="700" text-anchor="middle" fill="#78350f">Cerámica</text>
+  <text x="400" y="530" font-family="Georgia,serif" font-size="22" text-anchor="middle" fill="#78350f" opacity="0.6">Hecho a mano</text>
+</svg>

@@ -1,0 +1,59 @@
+<section class="shop-header container">
+  <span class="eyebrow">Catálogo completo</span>
+  <h1>Nuestras <em>piezas</em></h1>
+  <p><%= productos.length %> producto<%= productos.length !== 1 ? 's' : '' %> encontrado<%= productos.length !== 1 ? 's' : '' %></p>
+</section>
+
+<div class="container">
+  <form class="filters" method="GET" action="/shop">
+    <input
+      type="text"
+      name="q"
+      placeholder="Buscar piezas..."
+      value="<%= filtros.q %>"
+      autocomplete="off"
+    />
+
+    <select name="categoria">
+      <option value="">Todas las categorías</option>
+      <% categorias.forEach(cat => { %>
+        <option value="<%= cat %>" <%= filtros.categoria === cat ? 'selected' : '' %>>
+          <%= cat %>
+        </option>
+      <% }) %>
+    </select>
+
+    <select name="max">
+      <option value="">Precio máximo</option>
+      <option value="30"  <%= filtros.max === '30'  ? 'selected' : '' %>>Hasta $30</option>
+      <option value="60"  <%= filtros.max === '60'  ? 'selected' : '' %>>Hasta $60</option>
+      <option value="100" <%= filtros.max === '100' ? 'selected' : '' %>>Hasta $100</option>
+      <option value="200" <%= filtros.max === '200' ? 'selected' : '' %>>Hasta $200</option>
+    </select>
+
+    <button type="submit">Filtrar</button>
+
+    <% if (filtros.q || filtros.categoria || filtros.max) { %>
+      <a href="/shop" class="clear-filters">Limpiar ✕</a>
+    <% } %>
+  </form>
+</div>
+
+<section class="container" style="padding-bottom: 100px;">
+  <% if (productos.length === 0) { %>
+    <div class="empty-state">
+      <div style="font-size: 3rem; margin-bottom: 16px;">🔍</div>
+      <h3>Sin resultados</h3>
+      <p>No encontramos piezas con esos filtros. Prueba con otros criterios.</p>
+      <a href="/shop" class="btn btn-primary" style="margin-top: 24px;">Ver todo el catálogo</a>
+    </div>
+  <% } else { %>
+    <div class="product-grid">
+  <% productos.forEach((p, i) => { %>
+    <div class="fade-up" data-delay="<%= (i * 50) %>">
+      <%- include('partials/product-card', { producto: p }) %>
+    </div>
+  <% }) %>
+</div>
+  <% } %>
+</section>

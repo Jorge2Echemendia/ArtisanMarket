@@ -1,0 +1,153 @@
+<section class="contact-hero container">
+  <span class="eyebrow">Hablemos</span>
+  <h1>Cuéntanos tu <em>idea</em></h1>
+  <p class="lead">
+    ¿Quieres encargar una pieza personalizada, sumarte como artesano o simplemente
+    saludar? Escríbenos y te respondemos en menos de 24 horas.
+  </p>
+</section>
+
+<div class="container">
+  <% if (success) { %>
+    <div class="alert alert-success fade-up">
+      <span class="alert-icon">✓</span>
+      <div>
+        <strong>¡Gracias, <%= submittedName || 'amigo' %>!</strong>
+        <p>Tu mensaje llegó a nuestro taller. Te respondemos pronto.</p>
+      </div>
+    </div>
+  <% } %>
+
+  <% if (errors && errors.length > 0) { %>
+    <div class="alert alert-error fade-up">
+      <span class="alert-icon">!</span>
+      <div>
+        <strong>Revisa el formulario</strong>
+        <ul>
+          <% errors.forEach(err => { %>
+            <li><%= err %></li>
+          <% }) %>
+        </ul>
+      </div>
+    </div>
+  <% } %>
+</div>
+
+<section class="contact-section container">
+  <div class="contact-grid">
+    <div class="contact-info fade-up">
+      <h2>Nuestra <em>mesa de trabajo</em></h2>
+      <p>
+        Cada mensaje lo lee una persona real del equipo. No hay bots ni respuestas
+        automáticas — te contestamos con nuestras palabras.
+      </p>
+
+      <ul class="contact-list">
+        <li>
+          <span class="ci">📍</span>
+          <div>
+            <strong>Taller</strong>
+            <small>Calle Cerámica 42, Oaxaca, México</small>
+          </div>
+        </li>
+        <li>
+          <span class="ci">✉️</span>
+          <div>
+            <strong>Email</strong>
+            <small>hola@artisanmarket.co</small>
+          </div>
+        </li>
+        <li>
+          <span class="ci">🕐</span>
+          <div>
+            <strong>Horario</strong>
+            <small>Lun a Vie · 9:00 – 18:00 (GMT-6)</small>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <form class="contact-form fade-up" method="POST" action="/contact" novalidate style="animation-delay: 0.1s;">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="nombre">Nombre *</label>
+          <input
+            type="text"
+            id="nombre"
+            name="nombre"
+            value="<%= form.nombre || '' %>"
+            placeholder="Tu nombre"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value="<%= form.email || '' %>"
+            placeholder="tu@correo.com"
+            required
+          />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="asunto">Asunto *</label>
+        <select id="asunto" name="asunto" required>
+          <option value="">Selecciona un tema</option>
+          <option value="encargo"      <%= form.asunto === 'encargo'      ? 'selected' : '' %>>Encargo personalizado</option>
+          <option value="artesano"     <%= form.asunto === 'artesano'     ? 'selected' : '' %>>Quiero vender mi arte</option>
+          <option value="pedido"       <%= form.asunto === 'pedido'       ? 'selected' : '' %>>Estado de mi pedido</option>
+          <option value="prensa"       <%= form.asunto === 'prensa'       ? 'selected' : '' %>>Prensa / colaboración</option>
+          <option value="otro"         <%= form.asunto === 'otro'         ? 'selected' : '' %>>Otro</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="mensaje">Mensaje *</label>
+        <textarea
+          id="mensaje"
+          name="mensaje"
+          rows="6"
+          placeholder="Cuéntanos con detalle qué tienes en mente..."
+          required
+        ><%= form.mensaje || '' %></textarea>
+      </div>
+
+      <div class="form-check">
+        <input type="checkbox" id="terminos" name="terminos" <%= form.terminos ? 'checked' : '' %> required />
+        <label for="terminos">
+          Acepto la <a href="#">política de privacidad</a> y el tratamiento de mis datos.
+        </label>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-full">
+        Enviar mensaje →
+      </button>
+    </form>
+  </div>
+</section>
+
+<section class="faq container">
+  <h2>Preguntas <em>frecuentes</em></h2>
+  <div class="faq-list">
+    <details>
+      <summary>¿Cuánto tarda un encargo personalizado?</summary>
+      <p>Depende de la pieza y del artesano. Entre 2 y 6 semanas, y siempre te damos un plazo estimado antes de empezar.</p>
+    </details>
+    <details>
+      <summary>¿Puedo devolver una pieza hecha a medida?</summary>
+      <p>Los encargos personalizados no admiten devolución, pero siempre buscamos una solución si algo no sale como esperabas.</p>
+    </details>
+    <details>
+      <summary>¿Cómo me registro como artesano?</summary>
+      <p>Escríbenos con el asunto "Quiero vender mi arte" y cuéntanos sobre tu taller. Revisamos cada solicitud personalmente.</p>
+    </details>
+    <details>
+      <summary>¿Los envíos son internacionales?</summary>
+      <p>Sí, enviamos a más de 20 países con tracking. El costo se calcula en el checkout según destino.</p>
+    </details>
+  </div>
+</section>

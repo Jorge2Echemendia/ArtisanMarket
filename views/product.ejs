@@ -1,0 +1,73 @@
+<section class="product-detail container">
+  <a href="/shop" class="back-link">← Volver a la tienda</a>
+
+  <div class="detail-grid">
+    <div class="detail-img fade-up">
+      <img src="<%= producto.imagen %>" alt="<%= producto.nombre %>" />
+    </div>
+
+    <div class="detail-info fade-up" style="animation-delay: 0.1s;">
+      <span class="artisan-chip"><%= producto.artesano %></span>
+
+      <h1><%= producto.nombre %></h1>
+
+      <div class="rating-row">
+        <span class="stars">
+          <% for (let i = 1; i <= 5; i++) { %>
+            <%= i <= Math.round(producto.rating) ? '★' : '☆' %>
+          <% } %>
+        </span>
+        <span class="rating-num"><%= producto.rating %> · <%= producto.categoria %></span>
+      </div>
+
+      <p class="desc"><%= producto.descripcion %></p>
+
+      <div class="price">$<%= producto.precio.toFixed(2) %></div>
+
+      <div class="detail-actions">
+        <button class="btn btn-primary add-btn" data-id="<%= producto.id %>">
+          🧺 Añadir al carrito
+        </button>
+        <a href="/contact" class="btn btn-ghost">Consultar al artesano</a>
+      </div>
+
+      <div class="detail-meta">
+        <div class="meta-item">
+          <span class="meta-icon">🚚</span>
+          <div>
+            <strong>Envío protegido</strong>
+            <small>Empaque reciclado en 48h</small>
+          </div>
+        </div>
+        <div class="meta-item">
+          <span class="meta-icon">↩️</span>
+          <div>
+            <strong>Devolución 30 días</strong>
+            <small>Sin preguntas incómodas</small>
+          </div>
+        </div>
+        <div class="meta-item">
+          <span class="meta-icon">✋</span>
+          <div>
+            <strong>Pieza única</strong>
+            <small>Hecha a mano, sin réplicas</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <% if (relacionados.length > 0) { %>
+    <section class="related">
+      <header class="section-head">
+        <h2>Más piezas <em>relacionadas</em></h2>
+        <a href="/shop?categoria=<%= producto.categoria %>" class="link-arrow">Ver categoría →</a>
+      </header>
+      <div class="product-grid">
+        <% relacionados.forEach(p => { %>
+          <%- include('partials/product-card', { producto: p }) %>
+        <% }) %>
+      </div>
+    </section>
+  <% } %>
+</section>

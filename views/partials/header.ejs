@@ -1,0 +1,65 @@
+<header class="site-header">
+  <div class="container header-inner">
+
+    <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+
+    <a href="/" class="logo">
+      <span class="logo-mark">✦</span> ArtisanMarket
+    </a>
+
+
+    <nav class="nav">
+      <a href="/">Inicio</a>
+      <a href="/shop">Tienda</a>
+      <a href="/about">Nosotros</a>
+      <a href="/contact">Contacto</a>
+    </nav>
+
+    <a href="/cart" class="cart-btn" aria-label="Ver carrito">
+      🧺 <span class="cart-count" id="cart-count">0</span>
+    </a>
+  </div>
+</header>
+
+
+<aside class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+  <div class="drawer-header">
+    <a href="/" class="logo">
+      <span class="logo-mark">✦</span> ArtisanMarket
+    </a>
+    <button class="drawer-close" id="drawer-close" aria-label="Cerrar menú">✕</button>
+  </div>
+
+  <nav class="drawer-nav">
+    <a href="/">
+      <span class="d-icon">🏠</span>
+      <span>Inicio</span>
+    </a>
+    <a href="/shop">
+      <span class="d-icon">🛍️</span>
+      <span>Tienda</span>
+    </a>
+    <a href="/about">
+      <span class="d-icon">📖</span>
+      <span>Nosotros</span>
+    </a>
+    <a href="/contact">
+      <span class="d-icon">✉️</span>
+      <span>Contacto</span>
+    </a>
+    <a href="/cart">
+      <span class="d-icon">🧺</span>
+      <span>Carrito</span>
+    </a>
+  </nav>
+
+  <div class="drawer-footer">
+    <p>Hecho a mano, hecho con alma.</p>
+    <a href="/contact" class="btn btn-primary btn-full">Contactar soporte</a>
+  </div>
+</aside>
+
+<!-- Overlay -->
+<div class="drawer-overlay" id="drawer-overlay"></div>

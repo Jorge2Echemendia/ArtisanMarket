@@ -1,0 +1,68 @@
+<section class="cart-page container">
+  <header class="cart-header">
+    <span class="eyebrow">Tu selección</span>
+    <h1>Carrito de <em>compras</em></h1>
+  </header>
+
+
+  <div id="cart-loading" class="empty-state">
+    <div style="font-size: 2rem;">⏳</div>
+    <p>Cargando tu carrito...</p>
+  </div>
+
+ 
+  <div id="cart-empty" class="empty-state" style="display: none;">
+    <div style="font-size: 3rem; margin-bottom: 16px;">🧺</div>
+    <h3>Tu carrito está vacío</h3>
+    <p>Aún no has añadido ninguna pieza. Pasa por la tienda y enamórate de algo.</p>
+    <a href="/shop" class="btn btn-primary" style="margin-top: 24px;">Explorar catálogo</a>
+  </div>
+
+
+  <div id="cart-content" style="display: none;">
+    <div class="cart-grid">
+  
+      <div class="cart-items" id="cart-items"></div>
+
+
+      <aside class="cart-summary">
+        <h3>Resumen</h3>
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <span id="sum-subtotal">$0.00</span>
+        </div>
+        <div class="summary-row">
+          <span>Envío</span>
+          <span id="sum-shipping">—</span>
+        </div>
+        <div class="summary-row total">
+          <span>Total</span>
+          <span id="sum-total">$0.00</span>
+        </div>
+
+        <button class="btn btn-primary btn-full" id="checkout-btn" style="margin-top: 20px;">
+          Finalizar compra →
+        </button>
+        <button class="btn btn-ghost btn-full" id="clear-cart-btn" style="margin-top: 10px;">
+          Vaciar carrito
+        </button>
+
+        <p class="summary-note">
+          🔒 Compra simulada. No se procesará ningún pago real.
+        </p>
+      </aside>
+    </div>
+  </div>
+
+  <div id="cart-success" class="order-success" style="display: none;">
+    <div class="success-icon">✓</div>
+    <h2>¡Pedido confirmado!</h2>
+    <p>Gracias por apoyar a nuestros artesanos. Te enviamos un correo con los detalles (simulado, claro).</p>
+    <p class="order-id">Pedido <strong id="order-id">#AM-0000</strong></p>
+    <div class="success-actions">
+      <a href="/shop" class="btn btn-primary">Seguir comprando</a>
+      <a href="/" class="btn btn-ghost">Volver al inicio</a>
+    </div>
+  </div>
+  <script src="/js/cart.js"></script>
+</section>
