@@ -32,6 +32,10 @@ app.use((req, res) => {
   res.status(404).render('404', { title: 'Página no encontrada' });
 });
 
-app.listen(PORT, () => {
-  console.log(`🧶 ArtisanMarket corriendo en http://localhost:${PORT}`);
-});
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(PORT, () => {
+    console.log(`🧶 ArtisanMarket corriendo en http://localhost:${PORT}`);
+  });
+}
+
+module.exports = app;
